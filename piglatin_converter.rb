@@ -1,17 +1,19 @@
 class PiglatinConverter
 
-	def convert(word)
+	def self.convert(word)
 		return word if word == nil || word == ''
+		puts word + " is the input word"
+		puts "This is the first consonant set before the vowel."
 		p consonant_set = /^(.*?)[aeiou]/.match(word.downcase).captures
-		p final = word.sub(/^(.*?)[aeiou]/, '')
-		p final + consonant_set.join('') + 'ay'
+		puts "This is the fist consonant set as a string"
+		p consonant_string = consonant_set.join('')
+		puts "This is the final output"
+		p word.gsub(consonant_string, '') + consonant_string + 'ay'
 		
 	end
  
 end
 
-converter = PiglatinConverter.new
-converter.convert('string')
 
 	# def self.convert(word)
 	#   	return word if word == nil || word == ''
