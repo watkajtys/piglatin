@@ -15,11 +15,11 @@ class TestAdd < Test::Unit::TestCase
   end
 
   def test_string_empty
-  	assert_equal '<EMPTY STRING>', PiglatinConverter.convert('<EMPTY STRING>')
+  	assert_equal '', PiglatinConverter.convert('')
   end
 
   def test_nil_string
-  	assert_equal nil, PiglatinConverter.convert('')
+  	assert_equal nil, PiglatinConverter.convert(nil)
   end
 end
 
