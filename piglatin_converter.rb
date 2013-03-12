@@ -1,17 +1,13 @@
 class PiglatinConverter
 
   	def self.convert(word)
-	  	if word == nil || word == ''
-	  		return word
-		else word.is_a?(String)
-			pig = 'ay'
+	  	return word if word == nil || word == ''
 			word = word.downcase
-			p consonant_set = word.split(/[aeiou]/)
-			p first_consonant = consonant_set.shift
-			p consonant_at_end = consonant_set << first_consonant
-			p first = word.slice!(first_consonant)
-			word+first+pig
-		end
+			consonant_set = word.split(/[aeiou]/)
+			first_consonant = consonant_set.shift
+			consonant_at_end = consonant_set << first_consonant
+			first_set = word.slice!(first_consonant)
+			word+first_set+'ay'
 	end
 end
 
